@@ -2,6 +2,7 @@ package com.example.spring5jdk8test.listener;
 
 import com.example.spring5jdk8test.service.AnimalService;
 import com.example.spring5jdk8test.service.BaseService;
+import com.example.spring5jdk8test.service.ICommonService;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -24,5 +25,6 @@ public class TestListener implements ApplicationContextAware, ApplicationListene
         // 不在BaseService上声明@Primary时，会报错
         BaseService baseService = applicationContext.getBean(BaseService.class);
         AnimalService animalService = applicationContext.getBean(AnimalService.class);
+        ICommonService iCommonService = applicationContext.getBean(ICommonService.class);
     }
 }
